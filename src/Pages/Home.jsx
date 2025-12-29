@@ -390,7 +390,8 @@ const Home = () => {
               price: "₹ 85 Lakhs",
               image:
                 "https://images.unsplash.com/photo-1568605114967-8130f3a36994",
-              badge: "New Launch"
+              badge: "New Launch",
+              link : "/projects/1"
             },
             {
               title: "Premium Villas",
@@ -398,7 +399,8 @@ const Home = () => {
               price: "₹ 2.5 Cr",
               image:
                 "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
-              badge: "Hot Deal"
+              badge: "Hot Deal",
+              link : "/projects/2"
             },
             {
               title: "Commercial Spaces",
@@ -406,7 +408,8 @@ const Home = () => {
               price: "₹ 1.2 Cr",
               image:
                 "https://images.unsplash.com/photo-1484154218962-a197022b5858",
-              badge: "Limited"
+              badge: "Limited",
+              link : "/projects/3"
             },
             {
               title: "Luxury Plots",
@@ -414,16 +417,19 @@ const Home = () => {
               price: "₹ 45 Lakhs",
               image:
                 "https://images.unsplash.com/photo-1501183638710-841dd1904471",
-              badge: "HMDA Approved"
+              badge: "HMDA Approved",
+              link : "/projects/4"
             },
             {
               title: "Gated Community",
               location: "Tellapur, Hyderabad",
               price: "₹ 3.2 Cr",
               image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914",
-              badge: "Selling Fast"
+              badge: "Selling Fast",
+              link : "/projects/5"
             },
           ].map((property, i) => (
+            <Link to={property.link} key={i}>
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
@@ -486,6 +492,7 @@ const Home = () => {
                 </div>
               </div>
             </motion.div>
+            </Link>
           ))}
         </div>
       </section>

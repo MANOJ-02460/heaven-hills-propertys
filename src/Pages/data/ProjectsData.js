@@ -43,7 +43,7 @@ export const projectsData = [
     category: "Commercial",
     overview: "Propel your business forward with our premium commercial spaces in the city's financial nerve center. These offices are designed to inspire productivity and impress clients, featuring modern infrastructure and world-class amenities.",
     amenities: ["High-Speed Elevators", "Centralized AC", "Food Court", "Conference Halls", "Ample Parking", "100% Power Backup"],
-    locationHighlights: "Heart of Business District, Excellent Connectivity, Metro Access, Prestigious Address",
+    locationHighlights: ["Heart of Business District, Excellent Connectivity, Metro Access, Prestigious Address"],
     gallery: [
       "https://images.unsplash.com/photo-1484154218962-a197022b5858",
       "https://images.unsplash.com/photo-1497366216548-37526070297c",
@@ -59,7 +59,7 @@ export const projectsData = [
     category: "Plot",
     overview: "Build the home of your dreams on our HMDA-approved luxury plots. Located in a rapidly developing corridor, these plots offer a secure investment and a blank canvas to create a living space that is uniquely yours.",
     amenities: ["Underground Drainage", "Black Top Roads", "Avenue Plantation", "Children's Park", "Water Supply"],
-    locationHighlights: "HMDA Approved, Fast-A developing Area, Near ORR, Future IT Hub",
+    locationHighlights: ["HMDA Approved, Fast-A developing Area, Near ORR, Future IT Hub"],
     gallery: [
       "https://images.unsplash.com/photo-1501183638710-841dd1904471",
       "https://images.unsplash.com/photo-1600585154526-990dfced4db0",
@@ -75,7 +75,7 @@ export const projectsData = [
     category: "Villa",
     overview: "Discover a life of community and security in our exclusive gated community villas. With lush green landscapes, modern amenities, and a strong sense of belonging, it's the perfect place to raise a family.",
     amenities: ["Clubhouse", "Swimming Pool", "Sports Courts", "Lush Green Parks", "24/7 Security", "Community Hall"],
-    locationHighlights: "Well-Established Locality, Reputed Schools Nearby, Shopping Centers, Peaceful Environment",
+    locationHighlights: ["Well-Established Locality, Reputed Schools Nearby, Shopping Centers, Peaceful Environment"],
     gallery: [
       "https://images.unsplash.com/photo-1580587771525-78b9dba3b914",
       "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b",

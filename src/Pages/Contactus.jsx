@@ -1,4 +1,4 @@
-import {useEffect} from "react";
+import {useState,useEffect} from "react";
 import { motion } from "framer-motion";
 import {
   FaMapMarkerAlt,
@@ -19,6 +19,53 @@ const Contact = () => {
      window.scrollTo(0, 0);
      document.title="Contact Us | Heaven Hills Properties";
     },[])
+
+    // Icon components
+const PlusIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+  </svg>
+);
+
+const MinusIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12h-15" />
+  </svg>
+);
+
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const faqs = [
+    {
+      id: 1,
+      question: "What is the first step in the home buying process?",
+      answer: "Getting pre-approved for a mortgage is generally the first step. This gives you a clear idea of how much you can afford and shows sellers that you are a serious buyer. Once pre-approved, you can start looking for properties within your budget."
+    },
+    {
+      id: 2,
+      question: "How much do I need for a down payment?",
+      answer: "Down payment requirements vary depending on the loan type. Conventional loans often require between 3% to 20% down, while FHA loans can go as low as 3.5%. However, putting down 20% helps you avoid Private Mortgage Insurance (PMI)."
+    },
+    {
+      id: 3,
+      question: "What closing costs should I expect?",
+      answer: "Closing costs typically range from 2% to 5% of the loan amount. These include fees for appraisal, title insurance, attorney fees, and escrow deposits. Your lender will provide a 'Loan Estimate' shortly after you apply, outlining these costs."
+    },
+    {
+      id: 4,
+      question: "Should I sell my current home before buying a new one?",
+      answer: "It depends on your financial situation and the market. If you need the equity from your current home to buy the next one, selling first is safer. If the market is slow, you might risk owning two homes temporarily or being homeless if the new purchase closes before the sale. Contingency offers are a common solution."
+    },
+    {
+      id: 5,
+      question: "Is a home inspection really necessary?",
+      answer: "Highly recommended. While a home may look perfect visually, an inspector can check the foundation, roof, plumbing, and electrical systems for potential issues that could cost thousands of dollars later. It gives you negotiation power or an exit strategy if major problems are found."
+    }
+  ];
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
   return (
     <>
       {/* HERO SECTION - Light & Soft Theme */}
@@ -214,6 +261,61 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
+     <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-3xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            Frequently Asked Questions
+          </h2>
+          <p className="mt-4 text-lg text-gray-600">
+            Everything you need to know about buying and selling real estate.
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          {faqs.map((faq, index) => (
+            <div 
+              key={faq.id} 
+              className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md"
+            >
+              <button
+                onClick={() => toggleFAQ(index)}
+                className="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset"
+                aria-expanded={openIndex === index}
+              >
+                <span className="text-lg font-medium text-gray-900">
+                  {faq.question}
+                </span>
+                {/* Added rotation animation here */}
+                <span className="text-blue-600 ml-4 flex-shrink-0 transition-transform duration-300 ease-in-out transform">
+                  {openIndex === index ? <MinusIcon /> : <PlusIcon />}
+                </span>
+              </button>
+              
+              {/* Improved Animation using Grid for auto-height */}
+              <div 
+                className={`grid transition-all duration-300 ease-in-out ${
+                  openIndex === index ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                }`}
+              >
+                <div className="overflow-hidden min-h-0">
+                  <div className="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+                    {faq.answer}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        {/* <div className="mt-10 text-center">
+            <p className="text-gray-500 text-sm">
+                Still have questions? <a href="#" className="text-blue-600 font-semibold hover:text-blue-800 underline">Contact our support team</a>.
+            </p>
+        </div> */}
+      </div>
+    </section>
 
       {/* MAP SECTION - Clean & Integrated */}
       <section className="bg-white py-16 sm:py-20 lg:py-24 relative">
